@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#482719">
+	<meta name="description" content="Pujas Food Court, pilihan warung dan menu favorit dengan harga bersahabat.">
+	<title>Pujas Food Court | Perut Puas, Harga Pas</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+	<header class="site-header">
+		<a class="brand" href="index.html"><span class="brand-mark">P</span><span>Pujas<span class="brand-light"> Food Court</span></span></a>
+		<nav class="main-nav" aria-label="Navigasi utama">
+			<a class="active" href="index.html">Beranda</a><a href="#warung">Warung</a><a href="#favorit">Menu favorit</a>
+		</nav>
+		<a class="cart-link" href="cart.html" aria-label="Buka keranjang">Keranjang <span class="cart-count" id="cartCount">0</span></a>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="hero-copy">
+				<p class="eyebrow light">Banyak pilihan, satu tempat</p>
+				<h1>Mau makan apa<br>hari ini?</h1>
+				<p class="hero-description">Dari ayam geprek sampai es teler, temukan rasa favoritmu dari warung-warung pilihan.</p>
+				<a class="button button-gold" href="#warung">Jelajahi warung <span aria-hidden="true">↘</span></a>
+				<div class="hero-note"><span class="note-dot"></span> Pilihan warung lokal, harga bersahabat</div>
+			</div>
+			<div class="hero-image" role="img" aria-label="Hidangan makanan Indonesia di meja makan"><span class="hero-sticker">Perut puas,<br>harga pas!</span></div>
+			<div class="hero-index">01 <span></span> 06</div>
+		</section>
+
+		<section class="quick-facts" aria-label="Tentang Pujas Food Court">
+			<div><strong>06</strong><span>Warung pilihan</span></div><div><strong>25+</strong><span>Menu tersedia</span></div><div><strong>100%</strong><span>Rasa lokal</span></div>
+			<p>Tempat makan murah dan terjangkau<br>bagi mahasiswa dan keluarga.</p>
+		</section>
+
+		<section class="section section-warung" id="warung">
+			<div class="section-heading"><div><p class="eyebrow">Pilih tempatnya</p><h2>Warung pilihan</h2></div><div class="section-heading-tools"><p class="section-intro">Setiap warung punya cerita dan rasa andalannya sendiri.</p><button class="manage-menu-button" type="button" data-open-menu-manager>Kelola menu</button></div></div>
+			<div class="stall-grid" id="warungList" aria-live="polite"></div>
+		</section>
+		<dialog class="menu-manager" id="menuManager" aria-labelledby="managerTitle">
+			<div class="manager-heading"><div><p class="eyebrow">Data warung</p><h2 id="managerTitle">Kelola menu</h2></div><button class="manager-close" type="button" data-close-menu-manager aria-label="Tutup">×</button></div>
+			<label class="manager-field">Pilih warung<select id="managerWarung"></select></label>
+			<div class="manager-list" id="managerMenuList" aria-live="polite"></div>
+			<form class="manager-form" id="managerMenuForm">
+				<h3 id="managerFormTitle">Tambah menu</h3>
+				<input id="managerMenuIndex" type="hidden" value="">
+				<label class="manager-field">Nama menu<input id="managerMenuName" name="name" type="text" maxlength="80" required></label>
+				<div class="manager-fields-row"><label class="manager-field">Kategori<input id="managerMenuCategory" name="category" type="text" maxlength="50" required></label><label class="manager-field">Harga (Rp)<input id="managerMenuPrice" name="price" type="number" min="0" step="500" required></label></div>
+				<label class="manager-field">Foto menu<input id="managerMenuImage" name="image" type="text" maxlength="300" placeholder="Nama file foto atau URL"></label>
+				<label class="manager-favorite"><input id="managerFavorite" type="checkbox"><span>Tampilkan di menu favorit</span></label>
+				<label class="manager-field manager-favorite-tag" hidden>Label favorit<input id="managerFavoriteTag" type="text" maxlength="40" placeholder="Contoh: Favorit pelanggan"></label>
+				<div class="manager-form-actions"><button class="manager-secondary" type="button" data-reset-manager-form>Batal</button><button class="button button-brown" type="submit">Simpan menu</button></div>
+			</form>
+			<div class="manager-footer"><button class="clear-button" type="button" data-reset-menu-data>Atur ulang data bawaan</button></div>
+		</dialog>
+
+		<section class="section favorites" id="favorit">
+			<div class="section-heading"><div><p class="eyebrow">Paling dicari</p><h2>Menu favorit</h2></div><a class="text-link" href="#warung">Lihat semua warung <span aria-hidden="true">→</span></a></div>
+			<div class="favorite-grid" id="popularMenuList"></div>
+		</section>
+		<section class="closing-band"><p class="eyebrow light">Sudah lapar?</p><h2>Rasa enak tidak perlu jauh.</h2><a class="button button-light" href="#warung">Cari menu sekarang <span aria-hidden="true">→</span></a></section>
+	</main>
+	<footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark">P</span><span>Pujas<span class="brand-light"> Food Court</span></span></a><p>Perut puas, harga pas.</p><span>© 2026 Pujas Food Court</span></footer>
+	<script src="script.js"></script>
+</body>
+</html>
